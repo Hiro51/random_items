@@ -28,19 +28,16 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", item);
         }
         
-        BNRItem *item = [[BNRItem alloc] init];
-        
-        // This creates an NSString, "Red Sofa" and gives it to the BNRItem
-        item.itemName = @"Red Sofa";
-        
-        // This creates an NSString, "A1b2C" and gives it to the BNRItem
-        item.serialNumber = @"A1B2C";
-        
-        // This sends the value 100 to be used as the valueInDollers of this BNRItem
-        item.valueInDollars = 100;
+        BNRItem *item = [[BNRItem alloc] initWithItemName:@"Red Sofa" valueInDollars:100 serialNumber:@"A1B2C"];
         
         // The "%@" token is replaced with the result of sending the description message to the corresponding argument
         NSLog(@"%@", item);
+        
+        BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"Blue Sofa"];
+        NSLog(@"%@", itemWithName);
+        
+        BNRItem *itemWithNoName = [[BNRItem alloc] init];
+        NSLog(@"%@", itemWithNoName);
                 
         // Destroy the mutable array object
         items = nil;

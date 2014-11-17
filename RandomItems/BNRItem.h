@@ -12,8 +12,12 @@
     NSString *_itemName;
     NSString *_serialNumber;
     int _valueInDollars;
-    NSData *_dateCreated;
+    NSDate *_dateCreated;
 }
+
+// Designated initializer for BNRItem
+- (instancetype)initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber;
+- (instancetype)initWithItemName:(NSString *)name;
 
 - (void)setItemName:(NSString *)str;
 - (NSString *)itemName;
@@ -24,6 +28,6 @@
 - (void)setValueInDollars:(int)v;
 - (int)valueInDollars;
 
-- (NSData *)dateCreated;
+- (NSDate *)dateCreated;
 
 @end

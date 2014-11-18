@@ -26,8 +26,8 @@
     
     // Note that NSInteger is not an object, but a type definition for "long"
     NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                            [randomAdjectiveList objectAtIndex:adjectiveIndex],
-                            [randomNounList objectAtIndex:nounIndex]];
+                            randomAdjectiveList[adjectiveIndex],
+                            randomNounList[nounIndex]];
     int randomValue = arc4random() % 100;
     
     NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
@@ -69,32 +69,9 @@
     return [self initWithItemName:@"item"];
 }
 
-- (void)setItemName:(NSString *)str {
-    _itemName = str;
-}
-
--(NSString *)itemName {
-    return _itemName;
-}
-
-- (void)setSerialNumber:(NSString *)str {
-    _serialNumber = str;
-}
-
-- (NSString *)serialNumber {
-    return _serialNumber;
-}
-
-- (void)setValueInDollars:(int)v {
-    _valueInDollars = v;
-}
-
-- (int)valueInDollars {
-    return _valueInDollars;
-}
-
-- (NSData *)dateCreated {
-    return _dateCreated;
+- (void) setContaindItem:(BNRItem *)containdItem {
+    _containedItem = containdItem;
+    self.containedItem.container = self;
 }
 
 - (NSString *)description {
